@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,7 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Rubik:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Rubik:300,400,700"
+          rel="stylesheet">
 
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -25,7 +27,8 @@
     <nav class="navbar navbar-expand-md navbar-dark bg-light">
         <div class="container">
             <a class="navbar-brand" href="home">HomeStay Vjp Pr0</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+                    aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -84,7 +87,7 @@
                     <div class="row">
                         <div class="col-sm-6 form-group">
 
-                            <label >Arrival Date</label>
+                            <label>Arrival Date</label>
                             <div style="position: relative;">
                                 <span class="fa fa-calendar icon"
                                       style="position: absolute; right: 10px; top: 10px;"></span>
@@ -94,7 +97,7 @@
 
                         <div class="col-sm-6 form-group">
 
-                            <label >Departure Date</label>
+                            <label>Departure Date</label>
                             <div style="position: relative;">
                                 <span class="fa fa-calendar icon"
                                       style="position: absolute; right: 10px; top: 10px;"></span>
@@ -128,18 +131,24 @@
                             </select>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col-md-12 form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control ">
+                            <label for="room">HomeStay</label>
+                            <select name="homestayname" id="homestayname" class="form-control">
+                                <c:forEach var="item" items="${homestays}">
+                                    <option value="${item.homestayID}">${item.tenhomestay}</option>
+                                </c:forEach>
+                            </select>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 form-group">
-                            <label for="message">Write a Note</label>
+                            <label for="message">Note</label>
                             <textarea name="message" id="message" class="form-control " cols="30" rows="8"></textarea>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col-md-6 form-group">
                             <input type="submit" value="Reserve Now" class="btn btn-primary">
@@ -178,8 +187,6 @@
     </div>
 </section>
 <!-- END section -->
-
-
 <section class="section-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/img_5.jpg);">
     <div class="container">
         <div class="row justify-content-center align-items-center intro">
