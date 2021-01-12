@@ -28,6 +28,9 @@ public class HomeStayServlet extends HttpServlet {
             case "show":
                 showHomeStayInfor(request, response);
                 break;
+            case "booking":
+                bookingHomeStayById(request, response);
+                break;
             default:
                 request.setAttribute("homestays", homeStayDao.findAllHomeStay());
                 RequestDispatcher rd = request.getRequestDispatcher("/allhomestay.jsp");
@@ -40,6 +43,12 @@ public class HomeStayServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         request.setAttribute("homestay", homeStayDao.findHomeStayInfoById(id));
         RequestDispatcher rd = request.getRequestDispatcher("/homestayinfo.jsp");
+        rd.forward(request, response);
+    }
+    public void bookingHomeStayById(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        request.setAttribute("homestay", homeStayDao.findHomeStayInfoById(id));
+        RequestDispatcher rd = request.getRequestDispatcher("/bookingByid.jsp");
         rd.forward(request, response);
     }
 }

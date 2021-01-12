@@ -124,7 +124,7 @@
                             <li><span class="ion-ios-crop"></span> 6 Rooms <sup>2</sup></li>
                         </ul>
                         <p>Mountain View Homestay is located on the middle of the mountain, 1.2km from the center of Moc Chau. Located at the junction of Pa Hang, road to Loong Sap border gate and Giai bib waterfall, Happy Land tourist area ... </p>
-                        <p><a href="#" class="btn btn-primary btn-sm">Book Now From $20</a></p>
+                        <p><a href="rooms?action=booking&id=1" class="btn btn-primary btn-sm">Book Now From $20</a></p>
                     </div>
                 </div>
             </div>

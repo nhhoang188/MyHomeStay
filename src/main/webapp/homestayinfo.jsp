@@ -96,6 +96,7 @@
                     <img src="${item.anh1}" alt="Image placeholder" class="img-md-fluid">
                 </div>
             </div>
+            <p><a href="/rooms?action=booking&id=${item.homestayID}" class="btn btn-primary btn-sm">Book Now From $${item.giaphong}</a></p>
         </div>
     </section>
     <!-- END section -->

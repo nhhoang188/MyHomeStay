@@ -101,7 +101,7 @@
                             <li><span class="ion-ios-crop"></span> ${item.sophong} Rooms</li>
                         </ul>
                         <p>${item.thongtin} </p>
-                        <p><a href="booking" class="btn btn-primary btn-sm">Book Now From $${item.giaphong}</a></p>
+                        <p><a href="/rooms?action=booking&id=${item.homestayID}" class="btn btn-primary btn-sm">Book Now From $${item.giaphong}</a></p>
                     </div>
                 </div>
             </div>

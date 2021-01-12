@@ -75,7 +75,7 @@
     </div>
 </section>
 <!-- END section -->
-
+<c:forEach var="item" items="${homestay}">
 <section class="site-section">
     <div class="container">
         <div class="row">
@@ -104,8 +104,6 @@
                         </div>
 
                     </div>
-
-
                     <div class="row">
                         <div class="col-md-6 form-group">
                             <label for="room">Room</label>
@@ -131,14 +129,13 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control ">
+                            <h3 id="giaphong" >Rental fee 1 day:
+                            ${item.giaphong} $/Day</h3>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 form-group">
-                            <label for="message">Write a Note</label>
-                            <textarea name="message" id="message" class="form-control " cols="30" rows="8"></textarea>
+                        <h2 id="thanhtoan"></h2>
                         </div>
                     </div>
                     <div class="row">
@@ -150,13 +147,12 @@
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-5">
-                <h3 class="mb-5">Featured Room</h3>
+                <h3 class="mb-5">Detail Room</h3>
                 <div class="media d-block room mb-0">
                     <figure>
-                        <img src="images/img_1.jpg" alt="Generic placeholder image" class="img-fluid">
+                        <img src="${item.anh2}" alt="Generic placeholder image" class="img-fluid">
                         <div class="overlap-text">
                   <span>
-                    Featured Room
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
@@ -164,22 +160,29 @@
                         </div>
                     </figure>
                     <div class="media-body">
-                        <h3 class="mt-0"><a href="#">Presidential Room</a></h3>
+                        <h3 class="mt-0"><a href="rooms?action=booking&id=${item.homestayID}">Presidential Room</a></h3>
                         <ul class="room-specs">
                             <li><span class="ion-ios-people-outline"></span> 2 Guests</li>
                             <li><span class="ion-ios-crop"></span> 22 ft <sup>2</sup></li>
                         </ul>
-                        <p>Nulla vel metus scelerisque ante sollicitudin. Fusce condimentum nunc ac nisi vulputate
-                            fringilla. </p>
-                        <p><a href="#" class="btn btn-primary btn-sm">Book Now From $20</a></p>
+                        <p>${item.thongtin} </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+    let arrival_date = document.getElementsByid("arrival_date").value;
+    let departure_date = document.getElementsByid("departure_date").value;
+    let ngaythue = arrival_date -departure_date;
+    let room =  document.getElementsByid("room").value;
+    let giaphong = document.getElementsByid("giaphong").value;
+    let thanhtoan = giaphong*room;
+    document.getElementById("giatien").innerHTML="ToTal :" + thanhtoan +"$";
+    </script>
 </section>
 <!-- END section -->
-
+</c:forEach>
 
 <section class="section-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/img_5.jpg);">
     <div class="container">
@@ -195,7 +198,6 @@
     </div>
 </section>
 <!-- END section -->
-
 <footer class="site-footer">
     <div class="container">
         <div class="row mb-5">
