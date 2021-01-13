@@ -1,6 +1,7 @@
 package controller;
 
 import dao.AdminDao.Booking.BookingDao;
+import dao.AdminDao.HomeStay.HomeStayDao;
 import model.Booking;
 
 import javax.servlet.RequestDispatcher;
@@ -14,6 +15,7 @@ import java.io.IOException;
 @WebServlet(name = "booking", urlPatterns = "/booking")
 public class BookingServlet extends HttpServlet {
     BookingDao bookingDao = new BookingDao();
+    HomeStayDao homeStayDao = new HomeStayDao();
     private static final long serialVersionUID = 1L;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -21,6 +23,7 @@ public class BookingServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("homestays", homeStayDao.findAllHomeStay());
         RequestDispatcher rd = request.getRequestDispatcher("/booking.jsp");
         rd.forward(request, response);
     }

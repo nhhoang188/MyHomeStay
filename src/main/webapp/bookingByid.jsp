@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Rubik:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Rubik:300,400,700"
+          rel="stylesheet">
 
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -26,7 +27,8 @@
     <nav class="navbar navbar-expand-md navbar-dark bg-light">
         <div class="container">
             <a class="navbar-brand" href="home">HomeStay Vjp Pr0</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+                    aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -76,112 +78,116 @@
 </section>
 <!-- END section -->
 <c:forEach var="item" items="${homestay}">
-<section class="site-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h2 class="mb-5">Reservation Form</h2>
-                <form action="#" method="post">
-                    <div class="row">
-                        <div class="col-sm-6 form-group">
+    <section class="site-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="mb-5">Reservation Form</h2>
+                    <form action="#" method="post" onchange="tinhTien()">
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
 
-                            <label >Arrival Date</label>
-                            <div style="position: relative;">
+                                <label>Arrival Date</label>
+                                <div style="position: relative;">
                                 <span class="fa fa-calendar icon"
                                       style="position: absolute; right: 10px; top: 10px;"></span>
-                                <input type='text' class="form-control" name="arrival_date" id='arrival_date'/>
+                                    <input type='text' class="form-control" name="arrival_date" id='arrival_date'/>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="col-sm-6 form-group">
+                            <div class="col-sm-6 form-group">
 
-                            <label >Departure Date</label>
-                            <div style="position: relative;">
+                                <label>Departure Date</label>
+                                <div style="position: relative;">
                                 <span class="fa fa-calendar icon"
                                       style="position: absolute; right: 10px; top: 10px;"></span>
-                                <input type='text' class="form-control" name="departure_date" id='departure_date'/>
+                                    <input type='text' class="form-control" name="departure_date" id='departure_date'/>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label for="room">Room</label>
+                                <select name="room" id="room" class="form-control">
+                                    <option value="1">1 Rooms</option>
+                                    <option value="2">2 Rooms</option>
+                                    <option value="3">3 Rooms</option>
+                                    <option value="4">4 Rooms</option>
+                                    <option value="5">5 Rooms</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6 form-group">
+                                <label for="room">Guests</label>
+                                <select name="guest" id="guest" class="form-control">
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guest</option>
+                                    <option value="3">3 Guest</option>
+                                    <option value="4">4 Guest</option>
+                                    <option value="5">5 Guest</option>
+                                </select>
                             </div>
                         </div>
-
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            <label for="room">Room</label>
-                            <select name="room" id="room" class="form-control">
-                                <option value="1">1 Rooms</option>
-                                <option value="2">2 Rooms</option>
-                                <option value="3">3 Rooms</option>
-                                <option value="4">4 Rooms</option>
-                                <option value="5">5 Rooms</option>
-                            </select>
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <h3>Rental fee 1 day:
+                                        ${item.giaphong} $/Day</h3>
+                                <input type="hidden" id="giaphong" value="${item.giaphong}">
+                            </div>
                         </div>
-
-                        <div class="col-md-6 form-group">
-                            <label for="room">Guests</label>
-                            <select name="guest" id="guest" class="form-control">
-                                <option value="1">1 Guest</option>
-                                <option value="2">2 Guest</option>
-                                <option value="3">3 Guest</option>
-                                <option value="4">4 Guest</option>
-                                <option value="5">5 Guest</option>
-                            </select>
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <h2 id="thanhtoan"></h2>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 form-group">
-                            <h3 id="giaphong" >Rental fee 1 day:
-                            ${item.giaphong} $/Day</h3>
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input type="submit" value="Reserve Now" class="btn btn-primary">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 form-group">
-                        <h2 id="thanhtoan"></h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            <input type="submit" value="Reserve Now" class="btn btn-primary">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-5">
-                <h3 class="mb-5">Detail Room</h3>
-                <div class="media d-block room mb-0">
-                    <figure>
-                        <img src="${item.anh2}" alt="Generic placeholder image" class="img-fluid">
-                        <div class="overlap-text">
+                    </form>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+                    <h3 class="mb-5">Detail Room</h3>
+                    <div class="media d-block room mb-0">
+                        <figure>
+                            <img src="${item.anh2}" alt="Generic placeholder image" class="img-fluid">
+                            <div class="overlap-text">
                   <span>
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
                   </span>
+                            </div>
+                        </figure>
+                        <div class="media-body">
+                            <h3 class="mt-0"><a href="rooms?action=booking&id=${item.homestayID}">Presidential Room</a>
+                            </h3>
+                            <ul class="room-specs">
+                                <li><span class="ion-ios-people-outline"></span> 2 Guests</li>
+                                <li><span class="ion-ios-crop"></span> 22 ft <sup>2</sup></li>
+                            </ul>
+                            <p>${item.thongtin} </p>
                         </div>
-                    </figure>
-                    <div class="media-body">
-                        <h3 class="mt-0"><a href="rooms?action=booking&id=${item.homestayID}">Presidential Room</a></h3>
-                        <ul class="room-specs">
-                            <li><span class="ion-ios-people-outline"></span> 2 Guests</li>
-                            <li><span class="ion-ios-crop"></span> 22 ft <sup>2</sup></li>
-                        </ul>
-                        <p>${item.thongtin} </p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script>
-    let arrival_date = document.getElementsByid("arrival_date").value;
-    let departure_date = document.getElementsByid("departure_date").value;
-    let ngaythue = arrival_date -departure_date;
-    let room =  document.getElementsByid("room").value;
-    let giaphong = document.getElementsByid("giaphong").value;
-    let thanhtoan = giaphong*room;
-    document.getElementById("giatien").innerHTML="ToTal :" + thanhtoan +"$";
-    </script>
-</section>
-<!-- END section -->
+        <script>
+            function tinhTien() {
+                let arrival_date = Date.parse(document.getElementById("arrival_date").value);
+                let departure_date = Date.parse(document.getElementById("departure_date").value);
+                let songaythue = (departure_date -  arrival_date)/86400/1000;
+                let room = document.getElementById("room").value;
+                let giaphong = document.getElementById("giaphong").value;
+                let thanhtoan = giaphong * room*songaythue;
+                document.getElementById("thanhtoan").innerHTML = "ToTal :" + thanhtoan.toFixed(2) + "$";
+            }
+        </script>
+    </section>
+    <!-- END section -->
 </c:forEach>
 
 <section class="section-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/img_5.jpg);">
