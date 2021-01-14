@@ -161,7 +161,7 @@
                 <h3 class="mb-5">Featured Room</h3>
                 <div class="media d-block room mb-0">
                     <figure>
-                        <img src="images/img_1.jpg" alt="Generic placeholder image" class="img-fluid">
+                        <img src="images/room_5.jpg" alt="Generic placeholder image" class="img-fluid">
                         <div class="overlap-text">
                   <span>
                     Featured Room
@@ -172,14 +172,12 @@
                         </div>
                     </figure>
                     <div class="media-body">
-                        <h3 class="mt-0"><a href="#">Presidential Room</a></h3>
+                        <h3 class="mt-0"><a href="#">Homestay Savana Moc Chau</a></h3>
                         <ul class="room-specs">
                             <li><span class="ion-ios-people-outline"></span> 2 Guests</li>
                             <li><span class="ion-ios-crop"></span> 22 ft <sup>2</sup></li>
                         </ul>
-                        <p>Nulla vel metus scelerisque ante sollicitudin. Fusce condimentum nunc ac nisi vulputate
-                            fringilla. </p>
-                        <p><a href="#" class="btn btn-primary btn-sm">Book Now From $20</a></p>
+                        <p><a href="rooms?action=show&id=5" class="btn btn-primary btn-sm">Book Now From $5.5</a></p>
                     </div>
                 </div>
             </div>

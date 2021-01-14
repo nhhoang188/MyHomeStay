@@ -31,7 +31,6 @@ public class HomeStayDao extends AbstractDao<HomeStay> implements IHomeStayDAO {
     @Override
     public void deleteHomeStay(int id) {
         update(DELETE_HOME_STAY, id);
-
     }
 
     @Override

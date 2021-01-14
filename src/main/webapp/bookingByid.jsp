@@ -84,9 +84,9 @@
                 <div class="col-md-6">
                     <h2 class="mb-5">Reservation Form</h2>
                     <form action="#" method="post" onchange="tinhTien()">
+                        <h2>${item.tenhomestay}</h2>
                         <div class="row">
                             <div class="col-sm-6 form-group">
-
                                 <label>Arrival Date</label>
                                 <div style="position: relative;">
                                 <span class="fa fa-calendar icon"
@@ -138,7 +138,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12 form-group">
-                                <h2 id="thanhtoan"></h2>
+                                <h2 >Total : <span id="kq"> </span><input type="hidden" name="_thanhtoan" id="thanhtoan"> $</h2>
                             </div>
                         </div>
                         <div class="row">
@@ -183,7 +183,8 @@
                 let room = document.getElementById("room").value;
                 let giaphong = document.getElementById("giaphong").value;
                 let thanhtoan = giaphong * room*songaythue;
-                document.getElementById("thanhtoan").innerHTML = "ToTal :" + thanhtoan.toFixed(2) + "$";
+                document.getElementById("thanhtoan").value =thanhtoan.toFixed(2);
+                document.getElementById("kq").innerHTML =thanhtoan.toFixed(2);
             }
         </script>
     </section>

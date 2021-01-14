@@ -16,7 +16,15 @@ public class Booking {
         this.ngayDen = ngayDen;
         this.ngayDi = ngayDi;
     }
-
+    public Booking(int soNguoi, int soPhong, int iduser, int idhomestay, String ngayDen, String ngayDi, double thanhToan) {
+        this.soNguoi = soNguoi;
+        this.soPhong = soPhong;
+        this.iduser = iduser;
+        this.idhomestay = idhomestay;
+        this.ngayDen = ngayDen;
+        this.ngayDi = ngayDi;
+        this.thanhToan = thanhToan;
+    }
     public int getIduser() {
         return iduser;
     }

@@ -19,7 +19,7 @@ public class BookingServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        addBooking(request, response);
+        addBookingInstant(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -28,15 +28,15 @@ public class BookingServlet extends HttpServlet {
         rd.forward(request, response);
     }
 
-    private void addBooking(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    private void addBookingInstant(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String arrival_date = request.getParameter("arrival_date");
         String departure_date = request.getParameter("departure_date");
+        int idhomestay = Integer.parseInt(request.getParameter("homestayname"));
         String[] split = arrival_date.split("/");
         String[] split2 = departure_date.split("/");
         String date1 = split[2] + "-" + split[0] + "-" + split[1];
         String date2 = split2[2] + "-" + split2[0] + "-" + split2[1];
         int iduser = 1;
-        int idhomestay = 2;
         int songuoi = Integer.parseInt(request.getParameter("guest"));
         int sophong = Integer.parseInt(request.getParameter("room"));
         Booking booking = new Booking(songuoi, sophong, iduser, idhomestay, date1, date2);
